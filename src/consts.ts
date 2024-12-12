@@ -17,19 +17,11 @@ export const LINKS: Links = [
   },
   {
     text: "Prueba 1",
-    href: "/",
+    href: "/1",
   },
   {
-    text: "Prueba 2",
-    href: "/",
-  },
-  {
-    text: "Prueba 3",
-    href: "/",
-  },
-  {
-    text: "Prueba 4",
-    href: "/",
+    text: "Pueba 2",
+    href: "/2",
   },
 ];
 
