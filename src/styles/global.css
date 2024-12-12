@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-y: scroll;
+  color-scheme: light;
+  background-color: white;
+}
+
+html.dark {
+  color-scheme: dark;
+  background-color: black;
+}
+
+html,
+body {
+  @apply h-full w-full antialiased;
+  @apply bg-white dark:bg-black;
+  @apply text-black/75 dark:text-white/75;
+}
+
+body {
+  @apply flex flex-col;
+}
+
+main {
+  @apply flex flex-col flex-1 bg-white dark:bg-black;
+}
+
+header {
+  @apply border-b;
+  @apply transition-all duration-300 ease-in-out;
+}
+
+header:not(.scrolled) {
+  @apply bg-transparent border-transparent;
+}
+
+header.scrolled {
+  @apply bg-white/75 dark:bg-black/50;
+  @apply border-black/10 dark:border-white/25;
+  @apply backdrop-blur-sm saturate-200;
+}
