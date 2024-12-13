@@ -2,10 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter-medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
 html {
   overflow-y: scroll;
   color-scheme: light;
   background-color: white;
+  font-family: "Inter", sans-serif;
 }
 
 html.dark {
