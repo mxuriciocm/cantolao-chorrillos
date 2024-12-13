@@ -4,16 +4,18 @@ import { cn } from "@lib/utils";
 const { pathname } = Astro.url;
 const subpath = pathname.match(/[^/]+/g);
 import Container from "@components/Container.astro";
+import { Image } from "astro:assets";
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50">
   <Container size="md">
     <div class="h-full w-full flex items-center justify-between">
       <div class="flex gap-1 font-semibold">
-        <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-          <svg class="size-6 fill-current">
+        <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out items-center">
+          <!-- <svg class="size-6 fill-current">
             <use href="/"></use>
-          </svg>
+          </svg> -->
+          <Image src="/public/logo.png" alt="Logo Cantolao Chorrillos" width="40" height="30" />
           <div>
             {SITE.title}
           </div>
