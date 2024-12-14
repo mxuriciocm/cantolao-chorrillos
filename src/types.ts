@@ -23,3 +23,9 @@ export type Stats = {
   data: string;
   title: string;
 }[];
+
+export type Features = {
+  name: string;
+  description: string;
+  icon: string;
+}[]

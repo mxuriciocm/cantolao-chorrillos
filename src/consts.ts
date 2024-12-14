@@ -1,4 +1,4 @@
-import type { Site, Page, Links, Socials, Stats } from "@types";
+import type { Site, Page, Links, Socials, Stats, Features } from "@types";
 
 // Global
 export const SITE: Site = {
@@ -38,5 +38,24 @@ export const STATS: Stats = [
   {
     data: "100+",
     title: "Torneos participados",
+  },
+];
+
+// Features
+export const FEATURES: Features = [
+  {
+    name: 'Entrenadores de élite',
+    description: 'Nuestro equipo de entrenadores cuenta con experiencia profesional y certificaciones internacionales.',
+    icon: 'star',
+  },
+  {
+    name: 'Metodología probada',
+    description: 'Utilizamos métodos de entrenamiento modernos que han producido jugadores de nivel nacional e internacional.',
+    icon: 'trophy',
+  },
+  {
+    name: 'Desarrollo integral',
+    description: 'Fomentamos no solo habilidades futbolísticas, sino también valores como el trabajo en equipo y la disciplina.',
+    icon: 'person'
   },
 ];
