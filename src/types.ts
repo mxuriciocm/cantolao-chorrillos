@@ -18,3 +18,8 @@ export type Socials = {
   text: string;
   href: string;
 }[];
+
+export type Stats = {
+  data: string;
+  title: string;
+}[];
