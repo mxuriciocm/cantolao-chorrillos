@@ -1,0 +1,45 @@
+---
+import { FEATURES } from "@consts";
+---
+
+<div class="py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h2 class="text-base font-semibold leading-7 text-[#fbd304]">
+        Por qué elegirnos
+      </h2>
+      <p
+        class="mt-2 text-3xl font-bold tracking-tight text-[#050504] dark:text-[#FFFFFF] sm:text-4xl"
+      >
+        La mejor opción para el futuro futbolístico de tus hijos
+      </p>
+      <p class="mt-6 text-lg leading-8 text-[#333333] dark:text-[#F5F5F5]">
+        En nuestra academia, nos dedicamos a cultivar el talento y la pasión por
+        el fútbol en un ambiente profesional y de apoyo.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+      <dl
+        class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16"
+      >
+        {
+          FEATURES.map((feature) => (
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-[#050504] dark:text-[#FFFFFF]">
+                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#fbd304]">
+                  <svg class="w-6 h-6">
+                    <use href={`/ui.svg#${feature.icon}`} />
+                  </svg>
+                </div>
+                {feature.name}
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-[#333333] dark:text-[#F5F5F5]">
+                {feature.description}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</div>
