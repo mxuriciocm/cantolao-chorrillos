@@ -9,15 +9,12 @@ import { cn } from "@lib/utils";
     class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"
   >
     <Container size="xl">
-      <div class="flex items-center justify-between">
+      <div class="flex flex-wrap items-center justify-between gap-4">
         <div class="flex gap-1 font-semibold">
           <a
             href="/"
             class="flex gap-1 sm:gap-3 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out items-center"
           >
-            <!-- <svg class="size-6 fill-current">
-              <use href="/"></use>
-            </svg> -->
             <Image
               src="/logo.png"
               alt="Logo Cantolao Chorrillos"
@@ -31,14 +28,7 @@ import { cn } from "@lib/utils";
           </a>
         </div>
 
-        <span
-        class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
-        >© 2025 <a href="https://flowbite.com/" class="hover:underline"
-          >Cantolao Chorrillos</a
-        >. Todos los derechos reservados.</span
-      >
-
-        <div class="buttons flex gap-1">
+        <div class="buttons flex gap-1 order-2 sm:order-3">
           <a
             href="https://www.facebook.com/CantolaoChorrilloss/?locale=es_LA"
             target="_blank"
@@ -46,7 +36,9 @@ import { cn } from "@lib/utils";
             rel="noopener noreferrer"
             class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20 blend"
           >
-            <svg class="size-full fill-current group-hover:fill-back group-hover:fill-black group-hover:dark:fill-white blend">
+            <svg
+              class="size-full fill-current group-hover:fill-back group-hover:fill-black group-hover:dark:fill-white blend"
+            >
               <use href="/social.svg#facebook"></use>
             </svg>
           </a>
@@ -58,10 +50,17 @@ import { cn } from "@lib/utils";
             rel="noopener noreferrer"
             class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20 blend"
           >
-            <svg class="size-full fill-current group-hover:fill-back group-hover:fill-black group-hover:dark:fill-white blend">
+            <svg
+              class="size-full fill-current group-hover:fill-back group-hover:fill-black group-hover:dark:fill-white blend"
+            >
               <use href="/social.svg#instagram"></use>
             </svg>
           </a>
+        </div>
+
+        <div class="w-full sm:w-auto order-3 sm:order-2 text-sm text-gray-500 text-center dark:text-gray-400 flex flex-col sm:flex-row gap-1">
+          <span>© 2025 | <a href="/" class="hover:underline">Cantolao Chorrillos |</a></span>
+          <span>Todos los derechos reservados</span>
         </div>
       </div>
     </Container>
