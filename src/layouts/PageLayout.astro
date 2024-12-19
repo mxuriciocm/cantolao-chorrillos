@@ -4,6 +4,7 @@ import BaseHead from "@components/BaseHead.astro";
 import Drawer from "@components/Drawer.astro";
 import Header from "@components/Header.astro";
 import { SITE } from "@consts";
+import Footer from "@components/Footer.astro";
 const { title, description } = Astro.props;
 ---
 
@@ -18,5 +19,6 @@ const { title, description } = Astro.props;
     <main class="mt-24">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
