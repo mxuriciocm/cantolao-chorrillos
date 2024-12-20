@@ -1,68 +1,43 @@
 ---
 import { Image } from "astro:assets";
 import Container from "./Container.astro";
-import { cn } from "@lib/utils";
----
+import SocialLinks from "./SocialLinks.astro";
 
-<footer>
-  <section
-    class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"
-  >
-    <Container size="xl">
-      <div class="flex flex-wrap items-center justify-between gap-4">
-        <div class="flex gap-1 font-semibold">
-          <a
-            href="/"
-            class="flex gap-1 sm:gap-3 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out items-center"
-          >
-            <Image
-              src="/logo.png"
-              alt="Logo Cantolao Chorrillos"
-              width="40"
-              height="40"
-            />
-            <div>
-              <p>Cantolao</p>
-              <p>Chorrillos</p>
-            </div>
-          </a>
+const currentYear = new Date().getFullYear();
+const LOGO_SIZE = 40; 
+--- 
+
+<footer class="py-3 border-t border-black/10 dark:border-white/25">
+  <Container size="xl">
+    <div class="flex flex-wrap items-center justify-between">
+      <a 
+        href="/" 
+        class="flex items-center gap-1 sm:gap-3 hover:text-black dark:hover:text-white transition-colors duration-300"
+        aria-label="Ir a la página principal de Cantolao Chorrillos"
+      >
+        <Image 
+          src="/logo.png" 
+          alt="" 
+          width={LOGO_SIZE}
+          height={LOGO_SIZE}
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="font-semibold leading-tight">
+          <p>Cantolao</p>
+          <p>Chorrillos</p>
         </div>
+      </a>
 
-        <div class="buttons flex gap-1 order-2 sm:order-3">
-          <a
-            href="https://www.facebook.com/CantolaoChorrilloss/?locale=es_LA"
-            target="_blank"
-            aria-label="Facebook"
-            rel="noopener noreferrer"
-            class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20 blend"
-          >
-            <svg
-              class="size-full fill-current group-hover:fill-back group-hover:fill-black group-hover:dark:fill-white blend"
-            >
-              <use href="/social.svg#facebook"></use>
-            </svg>
-          </a>
+      <SocialLinks />
 
-          <a
-            href="https://www.facebook.com/CantolaoChorrilloss/?locale=es_LA"
-            target="_blank"
-            aria-label="Instagram"
-            rel="noopener noreferrer"
-            class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20 blend"
-          >
-            <svg
-              class="size-full fill-current group-hover:fill-back group-hover:fill-black group-hover:dark:fill-white blend"
-            >
-              <use href="/social.svg#instagram"></use>
-            </svg>
-          </a>
-        </div>
-
-        <div class="w-full sm:w-auto order-3 sm:order-2 text-sm text-gray-500 text-center dark:text-gray-400 flex flex-col sm:flex-row gap-1">
-          <span>© 2025 | <a href="/" class="hover:underline">Cantolao Chorrillos |</a></span>
+      <div class="w-full sm:w-auto order-3 sm:order-2 mt-3">
+        <p class="text-sm text-gray-500 dark:text-gray-400 text-center">
+          © {currentYear} | <a href="/" class="hover:underline">Cantolao Chorrillos</a> |
           <span>Todos los derechos reservados</span>
-        </div>
+        </p>
       </div>
-    </Container>
-  </section>
+    </div>
+  </Container>
 </footer>

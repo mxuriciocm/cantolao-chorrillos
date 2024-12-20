@@ -59,3 +59,24 @@ export const FEATURES: Features = [
     icon: 'person'
   },
 ];
+
+export const SOCIALS: Socials = [
+  {
+    name: 'Facebook',
+    icon: "facebook",
+    text: "Cantolao Chorrillos",
+    href: "https://www.facebook.com/CantolaoChorrilloss/?locale=es_LA",
+  },
+  {
+    name: 'Instagram',
+    icon: "instagram",
+    text: "Cantolao Chorrillos",
+    href: "https://www.instagram.com/cantolao.chorrillos/",
+  },
+  {
+    name: 'Youtube',
+    icon: "youtube",
+    text: "Cantolao Chorrillos",
+    href: "https://www.instagram.com/cantolao.chorrillos/",
+  }
+]
