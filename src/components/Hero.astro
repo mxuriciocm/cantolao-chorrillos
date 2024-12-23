@@ -1,52 +1,74 @@
 ---
 import Container from "./Container.astro";
 ---
+
 <Container size="md">
   <section class="mx-auto flex items-center flex-col py-8">
     <div class="mb-8">
-      <span class="bg-yellow-400 text-black text-sm font-medium px-3 py-1 rounded-full dark:bg-yellow-300 dark:text-black">¡Matrícula GRATIS este verano!</span>
+      <span
+        class="bg-yellow-400 text-black text-sm font-medium px-3 py-1 rounded-full dark:bg-yellow-300 dark:text-black"
+        >¡Matrícula GRATIS este verano!</span
+      >
     </div>
 
-    <h2 class="text-center text-3xl font-medium text-gray-900 dark:text-gray-50 sm:text-6xl">El inicio perfecto para el fútbol de tus hijos</h2>
-    <h4 class="mt-6 text-center text-lg leading-6 text-gray-600 dark:text-gray-200">
-      ¡Únete a la cantera MÁS GRANDE DEL PERÚ y construyamos juntos el futuro del fútbol! Inscribe a tus hijos hoy y dales la oportunidad de entrenar con los mejores, desarrollar su talento y crecer como verdaderos campeones.
+    <h1
+      class="text-center text-3xl font-medium text-gray-900 dark:text-gray-50 sm:text-6xl"
+    >
+      El inicio perfecto para el fútbol de tus hijos
+    </h1>
+    <h4
+      class="mt-6 text-center text-lg leading-6 text-gray-600 dark:text-gray-200"
+    >
+      ¡Únete a la cantera MÁS GRANDE DEL PERÚ y construyamos juntos el futuro
+      del fútbol! Inscribe a tus hijos hoy y dales la oportunidad de entrenar
+      con los mejores, desarrollar su talento y crecer como verdaderos
+      campeones.
     </h4>
 
-    <div class="mt-10 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:gap-4 w-full">
-      <a href="#" target="_blank" rel="noopener noreferrer" 
-        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg 
+    <div
+      class="mt-10 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:gap-4 w-full"
+    >
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg
         bg-black text-white dark:bg-white dark:text-black
-        transition-colors duration-300 gap-2">
+        transition-colors duration-300 gap-2"
+      >
         Más información
         <svg class="w-5 h-5">
           <use href="/ui.svg#arrow"></use>
         </svg>
       </a>
 
-      <a href="https://wa.me/51987979257/?text=¡Hola!%20Estoy%20interesado%20en%20obtener%20más%20información." 
-        target="_blank" rel="noopener noreferrer" 
-        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg 
+      <a
+        href="https://wa.me/51987979257/?text=¡Hola!%20Estoy%20interesado%20en%20obtener%20más%20información."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg
         bg-black text-white dark:bg-white dark:text-black
-        transition-colors duration-300 gap-2">
+        transition-colors duration-300 gap-2"
+      >
         <svg class="w-5 h-5">
           <use href="/ui.svg#message"></use>
         </svg> Pide informes
       </a>
     </div>
 
-    <div class="w-full max-w-3xl mt-12">
-      <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
-        <iframe 
-          src="https://www.youtube.com/embed/RO7OzKxKBkg?rel=0&modestbranding=1" 
-          class="absolute top-0 left-0 w-full h-full"
-          title="Video promocional Cantolao"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          referrerpolicy="no-referrer-when-downgrade"
-          sandbox="allow-scripts allow-same-origin allow-presentation"
-          allowfullscreen>
-        </iframe>
+    <div class="w-full max-w-3xl mt-20">
+      <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-[1.01]">
+        <lite-youtube
+          class="aspect-video w-full rounded-lg"
+          videoid="RO7OzKxKBkg"
+          videotitle="Cantolao Chorrillos"
+          params="modestbranding=1&rel=0"
+        ></lite-youtube>
       </div>
     </div>
   </section>
 </Container>
+
+<script>
+  import "@justinribeiro/lite-youtube";
+</script>
