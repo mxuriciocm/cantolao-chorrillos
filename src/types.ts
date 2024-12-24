@@ -19,13 +19,15 @@ export type Socials = {
   href: string;
 }[];
 
-export type Stats = {
-  data: string;
-  title: string;
-}[];
-
 export type Features = {
   name: string;
   description: string;
   icon: string;
+}[]
+
+export type Prices = {
+  name: string;
+  description: string;
+  icon: string;
+  price: string;
 }[]
