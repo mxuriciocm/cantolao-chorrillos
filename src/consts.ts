@@ -1,4 +1,4 @@
-import type { Site, Page, Links, Socials, Features, Prices } from "@types";
+import type { Site, Links, Socials, Features, Prices } from "@types";
 
 // Global
 export const SITE: Site = {
@@ -69,21 +69,26 @@ export const SOCIALS: Socials = [
 export const PRICES: Prices = [
   {
     name: "Mensualidad",
-    description: "Pago mensual que asegura 12 clases, disponibles a partir de la fecha de inscripción, y acceso total a los servicios de la academia.",
+    description:
+      "Pago mensual que asegura 12 clases, disponibles a partir de la fecha de inscripción, y acceso total a los servicios de la academia.",
     icon: "",
     price: "200",
-  },  
+    discount: "180",
+  },
   {
     name: "Matrícula",
-    description: "Pago único de inscripción. Se cobrará nuevamente tras ausencias mayores a 6 meses.",
+    description:
+      "Pago único de inscripción. Se cobrará nuevamente tras ausencias mayores a 6 meses.",
     icon: "",
     price: "100",
+    discount: "0",
   },
   {
     name: "Uniforme",
-    description: "Incluye polo, short y medias. Disponible en versiones de competencia, entrenamiento y alterno.",
+    description:
+      "Incluye polo, short y medias. Disponible en versiones de competencia, entrenamiento y alterno.",
     icon: "",
     price: "100",
+    discount: "",
   },
 ];
-

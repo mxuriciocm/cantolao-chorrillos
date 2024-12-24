@@ -30,4 +30,5 @@ export type Prices = {
   description: string;
   icon: string;
   price: string;
+  discount: string;
 }[]
