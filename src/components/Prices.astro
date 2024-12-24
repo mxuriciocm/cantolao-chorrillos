@@ -1,33 +1,48 @@
 ---
 import { PRICES } from "@consts";
 import Container from "@components/Container.astro";
+import Image from "astro/components/Image.astro";
+import imagePromo from "../../public/promo.webp"
 ---
 
 <Container size="xl">
-  <section class="py-16 px-4">
+  <section class="py-16 px-4" id="info">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold tracking-tight mb-4 text-black">
+        <h2
+          class="text-3xl font-bold tracking-tight mb-4 text-black dark:text-white"
+        >
           Inversión en tu futuro deportivo
         </h2>
-        <p class="text-muted-foreground max-w-2xl mx-auto">
+        <p class="text-muted-foreground max-w-2xl mx-auto text-lg">
           Únete a nuestra academia y comienza tu camino hacia la excelencia
           deportiva con planes diseñados para tu éxito.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="space-y-6">
+        <div class="space-y-6 mx-auto">
           {
             PRICES.map((item) => (
-              <div class="rounded-xl border bg-card text-card-foreground shadow p-6 transition-all hover:shadow-lg">
+              <div class="rounded-xl border bg-card text-card-foreground shadow p-6 transition-all hover:shadow-lg dark:bg-white">
                 <div class="flex items-start gap-4">
                   <div>
-                    <h3 class="font-semibold text-xl mb-2 flex items-center justify-between">
+                    <h3 class="font-semibold text-xl mb-2 flex items-center justify-between dark:text-black">
                       {item.name}
-                      <span class="text-primary">S/.{item.price}</span>
+                      <span class="flex items-center gap-2">
+                        {item.discount ? (
+                          <>
+                            <span class="text-gray-500 line-through text-base">
+                              S/.{item.price}
+                            </span>
+                            <span class="text-primary">S/.{item.discount}</span>
+                          </>
+                        ) : (
+                          <span class="text-primary">S/.{item.price}</span>
+                        )}
+                      </span>
                     </h3>
-                    <p class="text-muted-foreground text-sm">
+                    <p class="text-muted-foreground text-sm dark:text-gray-800">
                       {item.description}
                     </p>
                   </div>
@@ -38,13 +53,10 @@ import Container from "@components/Container.astro";
         </div>
 
         <div class="relative">
-          <img
-            src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&q=80&w=800"
-            alt="Promoción especial"
-            class="rounded-lg shadow-xl w-full object-cover aspect-[4/3]"
-          />
+          <Image src={imagePromo} alt="Promocion" class="rounded-lg shadow-xl w-full object-cover" />
         </div>
       </div>
     </div>
   </section>
 </Container>
+

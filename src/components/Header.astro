@@ -1,18 +1,27 @@
 ---
-import { SITE, LINKS } from "@consts";
+import { LINKS, SOCIALS } from "@consts";
 import { cn } from "@lib/utils";
+import { Image } from "astro:assets";
+import Container from "@components/Container.astro";
+
 const { pathname } = Astro.url;
 const subpath = pathname.match(/[^/]+/g);
-import Container from "@components/Container.astro";
-import { Image } from "astro:assets";
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50">
   <Container size="xl">
     <div class="h-full w-full flex items-center justify-between">
       <div class="flex gap-1 font-semibold">
-        <a href="/" class="flex gap-1 sm:gap-3 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out items-center ">
-          <Image src="/logo.png" alt="Logo Cantolao Chorrillos" width="40" height="40" />
+        <a
+          href="/"
+          class="flex gap-1 sm:gap-3 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out items-center"
+        >
+          <Image
+            src="/logo.png"
+            alt="Logo Cantolao Chorrillos"
+            width="40"
+            height="40"
+          />
           <div>
             <p>Cantolao</p>
             <p>Chorrillos</p>
@@ -23,7 +32,17 @@ import { Image } from "astro:assets";
       <nav class="hidden md:flex items-center justify-center text-sm gap-1">
         {
           LINKS.map((LINK) => (
-            <a href={LINK.href} class={cn("h-8 rounded-full px-3 text-current", "flex items-center justify-center", "transition-colors duration-300 ease-in-out", pathname === LINK.href || "/" + subpath?.[0] === LINK.href ? "bg-yellow-400 dark:bg-white text-white dark:text-black" : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white")}>
+            <a
+              href={LINK.href}
+              class={cn(
+                "h-8 rounded-full px-3 text-current",
+                "flex items-center justify-center",
+                "transition-colors duration-300 ease-in-out",
+                pathname === LINK.href || "/" + subpath?.[0] === LINK.href
+                  ? "bg-yellow-400 dark:bg-white text-white dark:text-black"
+                  : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+              )}
+            >
               {LINK.text}
             </a>
           ))
@@ -31,19 +50,41 @@ import { Image } from "astro:assets";
       </nav>
 
       <div class="buttons flex gap-1">
-        <a href="https://www.facebook.com/CantolaoChorrilloss/?locale=es_LA" target="_blank"  aria-label="Facebook" rel="noopener noreferrer" class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
-          <svg class="size-full">
-            <use href="/social.svg#facebook"></use>
-          </svg>
-        </a>
-  
-        <a href="https://www.instagram.com/cantolao.chorrillos/" target="_blank" aria-label="Instagram" rel="noopener noreferrer" class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
-          <svg class="size-full">
-            <use href="/social.svg#instagram"></use>
-          </svg>
-        </a>
-  
-        <button id="header-theme-button" aria-label="Alternar tema claro y oscuro" class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
+        {
+          SOCIALS.map((social) => (
+            <a
+              href={social.href}
+              target="_blank"
+              aria-label={social.name}
+              rel="noopener noreferrer"
+              class={cn(
+                "hidden md:flex",
+                "size-9 rounded-full p-2 items-center justify-center",
+                "bg-transparent hover:bg-black/5 dark:hover:bg-white/20",
+                "stroke-current hover:stroke-black hover:dark:stroke-white",
+                "border border-black/10 dark:border-white/25",
+                "transition-colors duration-300 ease-in-out"
+              )}
+            >
+              <svg class="size-full">
+                <use href={`/social.svg#${social.icon}`} />
+              </svg>
+            </a>
+          ))
+        }
+
+        <button
+          id="header-theme-button"
+          aria-label="Alternar tema claro y oscuro"
+          class={cn(
+            "hidden md:flex",
+            "size-9 rounded-full p-2 items-center justify-center",
+            "bg-transparent hover:bg-black/5 dark:hover:bg-white/20",
+            "stroke-current hover:stroke-black hover:dark:stroke-white",
+            "border border-black/10 dark:border-white/25",
+            "transition-colors duration-300 ease-in-out"
+          )}
+        >
           <svg class="size-full block dark:hidden">
             <use href="/ui.svg#sun"></use>
           </svg>
@@ -51,8 +92,19 @@ import { Image } from "astro:assets";
             <use href="/ui.svg#moon"></use>
           </svg>
         </button>
-  
-        <button id="header-drawer-button" aria-label="Alternar abrir y cerrar para menu" class={cn("flex md:hidden", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
+
+        <button
+          id="header-drawer-button"
+          aria-label="Alternar abrir y cerrar para menu"
+          class={cn(
+            "flex md:hidden",
+            "size-9 rounded-full p-2 items-center justify-center",
+            "bg-transparent hover:bg-black/5 dark:hover:bg-white/20",
+            "stroke-current hover:stroke-black hover:dark:stroke-white",
+            "border border-black/10 dark:border-white/25",
+            "transition-colors duration-300 ease-in-out"
+          )}
+        >
           <svg id="drawer-open" class="size-full">
             <use href="/ui.svg#menu"></use>
           </svg>
@@ -85,17 +137,17 @@ import { Image } from "astro:assets";
 
 <script is:inline>
   function toggleDrawer() {
-    const drawer = document.getElementById("drawer")
-    const drawerButton = document.getElementById("header-drawer-button")
-    drawer?.classList.toggle("open")
-    drawerButton?.classList.toggle("open")
+    const drawer = document.getElementById("drawer");
+    const drawerButton = document.getElementById("header-drawer-button");
+    drawer?.classList.toggle("open");
+    drawerButton?.classList.toggle("open");
   }
 
   function initializeDrawerButton() {
-    const drawerButton = document.getElementById("header-drawer-button")
-    drawerButton?.addEventListener("click", toggleDrawer)
+    const drawerButton = document.getElementById("header-drawer-button");
+    drawerButton?.addEventListener("click", toggleDrawer);
   }
 
-  document.addEventListener("astro:after-swap", initializeDrawerButton)
-  initializeDrawerButton()
+  document.addEventListener("astro:after-swap", initializeDrawerButton);
+  initializeDrawerButton();
 </script>

@@ -10,7 +10,7 @@ import Container from "@components/Container.astro";
         >¡Matrícula GRATIS este verano!</span
       >
     </div>
-    
+
     <h1
       class="text-center text-3xl font-medium text-gray-900 dark:text-gray-50 sm:text-6xl"
     >
@@ -24,14 +24,12 @@ import Container from "@components/Container.astro";
       con los mejores, desarrollar su talento y crecer como verdaderos
       campeones.
     </h4>
-    
 
     <div
       class="mt-10 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:gap-4 w-full"
     >
       <a
-        href="#"
-        target="_blank"
+        href="#info"
         rel="noopener noreferrer"
         class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg
         bg-black text-white dark:bg-white dark:text-black
@@ -58,18 +56,15 @@ import Container from "@components/Container.astro";
     </div>
 
     <div class="w-full max-w-3xl mt-20">
-      <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-[1.01]">
+      <div
+        class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-[1.01]"
+      >
         <lite-youtube
           class="aspect-video w-full rounded-lg"
           videoid="RO7OzKxKBkg"
           videotitle="Cantolao Chorrillos"
-          params="modestbranding=1&rel=0"
-        ></lite-youtube>
+          params="modestbranding=1&rel=0"></lite-youtube>
       </div>
     </div>
   </section>
 </Container>
-
-<script>
-  import "@justinribeiro/lite-youtube";
-</script>

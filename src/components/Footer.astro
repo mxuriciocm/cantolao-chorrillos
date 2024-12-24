@@ -1,23 +1,23 @@
 ---
+import { SOCIALS } from "@consts";
 import { Image } from "astro:assets";
 import Container from "./Container.astro";
-import SocialLinks from "./SocialLinks.astro";
 
 const currentYear = new Date().getFullYear();
-const LOGO_SIZE = 40; 
---- 
+const LOGO_SIZE = 40;
+---
 
 <footer class="py-3 border-t border-black/10 dark:border-white/25">
   <Container size="xl">
     <div class="flex flex-wrap items-center justify-between">
-      <a 
-        href="/" 
+      <a
+        href="/"
         class="flex items-center gap-1 sm:gap-3 hover:text-black dark:hover:text-white transition-colors duration-300"
         aria-label="Ir a la página principal de Cantolao Chorrillos"
       >
-        <Image 
-          src="/logo.png" 
-          alt="" 
+        <Image
+          src="/logo.png"
+          alt=""
           width={LOGO_SIZE}
           height={LOGO_SIZE}
           aria-hidden="true"
@@ -30,11 +30,32 @@ const LOGO_SIZE = 40;
         </div>
       </a>
 
-      <SocialLinks />
+      <nav class="flex gap-1 order-2 sm:order-3" aria-label="Redes sociales">
+        {
+          SOCIALS.map((social) => (
+            <a
+              href={social.href}
+              target="_blank"
+              aria-label={`${social.name} de ${social.text}`}
+              rel="noopener noreferrer"
+              class="group size-10 p-2 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/20 transition-colors"
+            >
+              <svg
+                class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white transition-colors"
+                aria-hidden="true"
+              >
+                <use href={`/social.svg#${social.icon}`} />
+              </svg>
+            </a>
+          ))
+        }
+      </nav>
 
       <div class="w-full sm:w-auto order-3 sm:order-2 mt-3">
         <p class="text-sm text-gray-500 dark:text-gray-400 text-center">
-          © {currentYear} | <a href="/" class="hover:underline">Cantolao Chorrillos</a> |
+          © {currentYear} | <a href="/" class="hover:underline"
+            >Cantolao Chorrillos</a
+          > |
           <span>Todos los derechos reservados</span>
         </p>
       </div>
