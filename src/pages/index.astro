@@ -1,6 +1,7 @@
 ---
 import Features from "@components/Features.astro";
 import Hero from "@components/Hero.astro";
+import Prices from "@components/Prices.astro";
 import { SITE } from "@consts";
 import PageLayout from "@layouts/PageLayout.astro";
 ---
@@ -8,4 +9,5 @@ import PageLayout from "@layouts/PageLayout.astro";
 <PageLayout title="Inicio" description={SITE.description}>  
   <Hero />
   <Features />
+  <Prices />
 </PageLayout>
