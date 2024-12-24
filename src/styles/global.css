@@ -42,7 +42,7 @@ html::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(253,224,71,0.15), rgba(234,179,8,0.1), rgba(255,255,255,0));
+  background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(253,224,71,0.3), rgba(234,179,8,0.2), rgba(255,255,255,0.1));
 }
 
 html.dark::before {
