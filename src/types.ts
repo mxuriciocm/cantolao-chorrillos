@@ -32,3 +32,8 @@ export type Prices = {
   price: string;
   discount: string;
 }[]
+
+export type Questions = {
+  question: string;
+  answer: string;
+}[]

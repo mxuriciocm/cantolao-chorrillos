@@ -1,4 +1,4 @@
-import type { Site, Links, Socials, Features, Prices } from "@types";
+import type { Site, Links, Socials, Features, Prices, Questions } from "@types";
 
 // Global
 export const SITE: Site = {
@@ -14,12 +14,20 @@ export const LINKS: Links = [
     href: "/",
   },
   {
-    text: "Prueba 1",
+    text: "Categorías",
+    href: "/categorias",
+  },
+  {
+    text: "Ubicación",
+    href: "/ubicacion",
+  },
+  {
+    text: "Test",
     href: "/1",
   },
   {
-    text: "Pueba 2",
-    href: "/2",
+    text: "Test",
+    href: "/1",
   },
 ];
 
@@ -73,7 +81,7 @@ export const PRICES: Prices = [
       "Pago mensual que asegura 12 clases, disponibles a partir de la fecha de inscripción, y acceso total a los servicios de la academia.",
     icon: "",
     price: "200",
-    discount: "180",
+    discount: "190",
   },
   {
     name: "Matrícula",
@@ -90,5 +98,58 @@ export const PRICES: Prices = [
     icon: "",
     price: "100",
     discount: "",
+  },
+];
+
+export const QUESTIONS: Questions = [
+  {
+    question: "¿Cómo puedo inscribirme en la academia?",
+    answer:
+      "Puedes inscribirte en nuestra academia visitando nuestra página de inscripciones y completando el formulario en línea.",
+  },
+  {
+    question: "¿Qué edades pueden participar en los entrenamientos?",
+    answer:
+      "Nuestros entrenamientos están disponibles para niños y adultos desde los 5 hasta los 40 años, con grupos divididos por edades y niveles.",
+  },
+  {
+    question: "¿Necesito experiencia previa en fútbol para unirme?",
+    answer:
+      "No es necesario tener experiencia previa. Ofrecemos entrenamientos para principiantes, intermedios y avanzados.",
+  },
+  {
+    question: "¿Cuáles son los horarios de entrenamiento?",
+    answer:
+      "Los horarios varían según el grupo de edad y nivel, pero generalmente ofrecemos entrenamientos de lunes a viernes en horarios vespertinos y los sábados por la mañana.",
+  },
+  {
+    question: "¿La academia ofrece clases de fútbol femenino?",
+    answer:
+      "Sí, ofrecemos clases y equipos de fútbol femenino en diferentes categorías y niveles de habilidad.",
+  },
+  {
+    question: "¿Qué equipo necesito para entrenar?",
+    answer:
+      "Solo necesitas ropa deportiva cómoda, zapatillas adecuadas para fútbol y una pelota. Proporcionamos el resto del equipo necesario durante las sesiones.",
+  },
+  {
+    question: "¿Hay programas de verano o campamentos de fútbol?",
+    answer:
+      "Sí, durante las vacaciones de verano organizamos campamentos intensivos de fútbol para mejorar habilidades y disfrutar del deporte.",
+  },
+  {
+    question: "¿Cómo puedo unirme a un equipo competitivo?",
+    answer:
+      "Una vez que completes el proceso de inscripción y asistencia a los entrenamientos, nuestros entrenadores evaluarán tu nivel y podrán recomendarte para unirte a uno de nuestros equipos competitivos.",
+  },
+  {
+    question: "¿Puedo hacer una clase de prueba antes de inscribirme?",
+    answer:
+      "Sí, ofrecemos una clase de prueba gratuita para que puedas conocer nuestra metodología de entrenamiento y decidir si es adecuado para ti.",
+  },
+  {
+    question: "¿La academia organiza partidos amistosos o torneos?",
+    answer:
+      "Sí, organizamos partidos amistosos y torneos internos para que nuestros jugadores puedan poner en práctica sus habilidades en situaciones reales de juego.",
   },
 ];
