@@ -2,61 +2,80 @@
 import { PRICES } from "@consts";
 import Container from "@components/Container.astro";
 import Image from "astro/components/Image.astro";
-import imagePromo from "../../public/promo.webp"
+import imagePromo from "../../public/promo.webp";
 ---
 
 <Container size="xl">
   <section class="py-16 px-4" id="info">
     <div class="max-w-6xl mx-auto">
+      <!-- Título y descripción -->
       <div class="text-center mb-12">
         <h2
-          class="text-3xl font-bold tracking-tight mb-4 text-black dark:text-white"
+          class="text-4xl font-extrabold tracking-tight mb-4 text-primary dark:text-primary-light"
         >
           Inversión en tu futuro deportivo
         </h2>
-        <p class="text-muted-foreground max-w-2xl mx-auto text-lg">
+        <p class="text-gray-dark max-w-2xl mx-auto text-lg dark:text-gray-300">
           Únete a nuestra academia y comienza tu camino hacia la excelencia
           deportiva con planes diseñados para tu éxito.
         </p>
       </div>
 
+      <!-- Grilla de precios y promo -->
       <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Lista de precios -->
         <div class="space-y-6 mx-auto">
-          {
-            PRICES.map((item) => (
-              <div class="rounded-xl border bg-card text-card-foreground shadow p-6 transition-all hover:shadow-lg dark:bg-white">
-                <div class="flex items-start gap-4">
-                  <div>
-                    <h3 class="font-semibold text-xl mb-2 flex items-center justify-between dark:text-black">
-                      {item.name}
-                      <span class="flex items-center gap-2">
-                        {item.discount ? (
-                          <>
-                            <span class="text-gray-500 line-through text-base">
-                              S/.{item.price}
-                            </span>
-                            <span class="text-primary">S/.{item.discount}</span>
-                          </>
-                        ) : (
-                          <span class="text-primary">S/.{item.price}</span>
-                        )}
-                      </span>
-                    </h3>
-                    <p class="text-muted-foreground text-sm dark:text-gray-800">
-                      {item.description}
-                    </p>
-                  </div>
+          {PRICES.map((item) => (
+            <div
+              class="rounded-xl border border-accent-dark bg-white shadow-lg p-6 transition-transform transform hover:scale-[1.02] hover:shadow-xl dark:bg-transparent dark:border-accent-light"
+            >
+              <div class="flex items-start gap-4">
+                <div>
+                  <h3
+                    class="font-semibold text-lg md:text-xl mb-2 flex items-center justify-between text-gray-darkest dark:text-white"
+                  >
+                    {item.name}
+                    <span class="flex items-center gap-2">
+                      {item.discount ? (
+                        <>
+                          <span
+                            class="text-gray-500 line-through text-base dark:text-gray-400"
+                          >
+                            S/.{item.price}
+                          </span>
+                          <span
+                            class="text-primary font-semibold text-lg"
+                          >
+                            S/.{item.discount}
+                          </span>
+                        </>
+                      ) : (
+                        <span
+                          class="text-primary font-semibold text-lg"
+                        >
+                          S/.{item.price}
+                        </span>
+                      )}
+                    </span>
+                  </h3>
+                  <p class="text-gray-dark text-sm dark:text-gray-300">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-            ))
-          }
+            </div>
+          ))}
         </div>
 
+        <!-- Imagen promocional -->
         <div class="relative">
-          <Image src={imagePromo} alt="Promocion" class="rounded-lg shadow-xl w-full object-cover" />
+          <Image
+            src={imagePromo}
+            alt="Promoción"
+            class="rounded-lg shadow-2xl w-full object-cover"
+          />
         </div>
       </div>
     </div>
   </section>
 </Container>
-

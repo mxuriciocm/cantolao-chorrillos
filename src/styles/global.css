@@ -43,11 +43,12 @@ html::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(253,224,71,0.3), rgba(234,179,8,0.2), rgba(255,255,255,0.1));
+  /* background: radial-gradient(ellipse 80% 80% at 50% -20%,rgba(255,223,88,0.3),rgba(240,184,28,0.2),rgba(255,255,255,0)) */
+  background: radial-gradient(ellipse 80% 80% at 50% -20%,rgba(255,215,0,0.5),rgba(240,169,30,0.35), rgba(255,255,255,0.1));
 }
 
 html.dark::before {
-  background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(234,179,8,0.15), rgba(161,98,7,0.1), rgba(17,24,39,0));
+  background: radial-gradient(ellipse 80% 80% at 50% -20%,rgba(234,179,8,0.3),rgba(161,98,7,0.2),rgba(17,24,39,0))
 }
 
 html.dark {
