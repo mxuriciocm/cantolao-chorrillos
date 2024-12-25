@@ -51,7 +51,7 @@ const subpath = pathname.match(/[^/]+/g);
 
       <div class="buttons flex gap-1">
         {
-          SOCIALS.map((social) => (
+          SOCIALS.slice(0, 2).map((social) => (
             <a
               href={social.href}
               target="_blank"
