@@ -1,0 +1,63 @@
+---
+import Container from "./Container.astro";
+import { LOCATION } from "@consts";
+---
+
+<Container size="xl">
+  <section class="py-8 md:py-12">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestra Ubicación</h2>
+      <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Nos encontramos en Chorrillos, dentro del Cuartel Tarapacá donde se encuentran los campos deportivos </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="w-full h-[450px] rounded-lg overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.796440385665!2d-77.00415352519973!3d-12.194249787396094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9c7899fa387%3A0xce1fe9a410a5bd2e!2sCantolao%20Chorrillos!5e0!3m2!1ses-419!2spe!4v1735148864059!5m2!1ses-419!2spe"
+          class="w-full h-full"
+          loading="lazy"
+          title="Ubicación de Cantolao Chorrillos"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="space-y-6">
+        {
+          LOCATION.map((info) => (
+            <div class="rounded-xl border border-accent-dark bg-white shadow-lg p-6 transition-transform transform hover:scale-[1.02] hover:shadow-xl dark:bg-transparent dark:border-accent-light">
+              <div class="flex items-center gap-4">
+                <div class="text-2xl text-accent-dark dark:text-accent-light">
+                  <svg class="w-6 h-6 stroke-current">
+                    <use href={`/ui.svg#${info.icon}`} />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg md:text-md mb-2 text-gray-darkest dark:text-white">
+                    {info.name}
+                  </h3>
+                  <p class="text-gray-dark text-sm dark:text-gray-300">
+                    {info.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="flex justify-center my-6">
+      <a
+        href="https://wa.me/51987979257/?text=Hola!%20Quisiera%20más%20información."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg
+      bg-gray-darkest text-white dark:bg-gray-light dark:text-gray-darkest
+      hover:bg-gray-dark hover:text-white dark:hover:bg-gray-dark
+      transition-colors duration-300 gap-2"
+      >
+        <svg class="w-5 h-5">
+          <use href="/ui.svg#message"></use>
+        </svg> Más Información
+      </a>
+    </div>
+  </section>
+</Container>
