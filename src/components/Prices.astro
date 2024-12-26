@@ -8,7 +8,6 @@ import imagePromo from "../../public/promo.webp";
 <Container size="xl">
   <section class="py-16 px-4" id="info">
     <div class="max-w-6xl mx-auto">
-      <!-- Título y descripción -->
       <div class="text-center mb-12">
         <h2
           class="text-4xl font-extrabold tracking-tight mb-4 text-primary dark:text-primary-light"
@@ -21,9 +20,7 @@ import imagePromo from "../../public/promo.webp";
         </p>
       </div>
 
-      <!-- Grilla de precios y promo -->
       <div class="grid md:grid-cols-2 gap-8 items-center">
-        <!-- Lista de precios -->
         <div class="space-y-6 mx-auto">
           {PRICES.map((item) => (
             <div
@@ -67,7 +64,6 @@ import imagePromo from "../../public/promo.webp";
           ))}
         </div>
 
-        <!-- Imagen promocional -->
         <div class="relative">
           <Image
             src={imagePromo}
