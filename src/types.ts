@@ -37,3 +37,9 @@ export type Questions = {
   question: string;
   answer: string;
 }[]
+
+export type Location = {
+  name: string;
+  description: string;
+  icon: string;
+}[]

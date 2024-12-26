@@ -1,4 +1,4 @@
-import type { Site, Links, Socials, Features, Prices, Questions } from "@types";
+import type { Site, Links, Socials, Features, Prices, Questions, Location } from "@types";
 
 // Global
 export const SITE: Site = {
@@ -18,12 +18,12 @@ export const LINKS: Links = [
     href: "/categorias",
   },
   {
-    text: "Ubicación",
-    href: "/ubicacion",
+    text: "Federación",
+    href: "/federacion",
   },
   {
-    text: "Test",
-    href: "/1",
+    text: "Ubicación",
+    href: "/ubicacion",
   },
   {
     text: "Test",
@@ -153,3 +153,21 @@ export const QUESTIONS: Questions = [
       "Sí, organizamos partidos amistosos y torneos internos para que nuestros jugadores puedan poner en práctica sus habilidades en situaciones reales de juego.",
   },
 ];
+
+export const LOCATION: Location = [
+  {
+    name: 'Ubicación',
+    description: 'Cruce con, Av. Prol. Huaylas, Chorrillos 15054.',
+    icon: 'location',
+  },
+  {
+    name: 'Teléfono',
+    description: '+51 987 979 257',
+    icon: 'phone',
+  },
+  {
+    name: 'Horario de atención',
+    description: 'Lunes, Miércoles y Viernes de 3:30 a 9 pm.',
+    icon: 'clock',
+  }
+]
