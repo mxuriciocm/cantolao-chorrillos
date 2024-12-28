@@ -1,4 +1,4 @@
-import type { Site, Links, Socials, Features, Prices, Questions, Location } from "@types";
+import type { Site, Links, Socials, Features, Prices, Questions, Transport, Landmark } from "@types";
 
 // Global
 export const SITE: Site = {
@@ -154,20 +154,59 @@ export const QUESTIONS: Questions = [
   },
 ];
 
-export const LOCATION: Location = [
+export const TRANSPORT: Transport = [
   {
-    name: 'Ubicación',
-    description: 'Cruce con, Av. Prol. Huaylas, Chorrillos 15054.',
-    icon: 'location',
+    type: 'Metropolitano',
+    details: 'Desde la Estación Matellini',
+    instructions: `Bajar en el paradero a la altura de Roky's`,
   },
   {
-    name: 'Teléfono',
-    description: '+51 987 979 257',
-    icon: 'phone',
+    type: 'Bus',
+    details: 'Desde cualquier paradero',
+    instructions: `Bajar en el paradero "Casa Blanca"`,
   },
   {
-    name: 'Horario de atención',
-    description: 'Lunes, Miércoles y Viernes de 3:30 a 9 pm.',
-    icon: 'clock',
+    type: 'Auto particular',
+    details: 'Estacionamiento Disponible',
+    instructions: 'Ingreso por la entrada del Cuartel Tarapacá, costo de S/5',
   }
 ]
+
+export const LANDMARK: Landmark = [
+  {
+    name: 'Estación de Servicio Repsol',
+    distance: '1 min',
+    description: 'Gasolinera'
+  },
+  {
+    name: 'Instituto Nacional de Rehabilitación Dra. Adriana Rebaza Flores',
+    distance: '2 min',
+    description: 'Institución de salud especializada en Medicina Física y de Rehabilitación'
+  },
+  {
+    name: 'La curva',
+    distance: '7 min',
+    description: 'Ovalo La Curva'
+  },
+  {
+    name: 'Estación Matellini',
+    distance: '9 min',
+    description: 'Estación principal del Metropolitano'
+  },
+]
+
+export const CONTACT = {
+  phone: "+51987979257",
+  whatsapp: "https://wa.me/51987979257/?text=Hola!%20Quisiera%20más%20información.",
+  schedule: [
+    { day: "Lunes", hours: "3:30 PM - 9:00 PM" },
+    { day: "Miércoles", hours: "3:30 PM - 9:00 PM" },
+    { day: "Viernes", hours: "3:30 PM - 9:00 PM" }
+  ],
+  address: {
+    street: "Av. Prolongación Huaylas",
+    district: "Chorrillos",
+    postalCode: "15054",
+    city: "Lima"
+  }
+}

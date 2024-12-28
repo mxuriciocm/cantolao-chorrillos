@@ -23,7 +23,7 @@ export type Features = {
   name: string;
   description: string;
   icon: string;
-}[]
+}[];
 
 export type Prices = {
   name: string;
@@ -31,15 +31,21 @@ export type Prices = {
   icon: string;
   price: string;
   discount: string;
-}[]
+}[];
 
 export type Questions = {
   question: string;
   answer: string;
-}[]
+}[];
 
-export type Location = {
+export type Transport = {
+  type: string;
+  details: string;
+  instructions: string;
+}[];
+
+export type Landmark = {
   name: string;
+  distance: string;
   description: string;
-  icon: string;
-}[]
+}[];
