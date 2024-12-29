@@ -1,37 +1,20 @@
 ---
 import { TRANSPORT, LANDMARK, CONTACT } from "@consts";
-import Container from "./Container.astro";
+import Container from "@components/Container.astro";
 
-const mapUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.796440385665!2d-77.00415352519973!3d-12.194249787396094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9c7899fa387%3A0xce1fe9a410a5bd2e!2sCantolao%20Chorrillos!5e0!3m2!1ses-419!2spe!4v1735148864059!5m2!1ses-419!2spe";
+const mapUrl ="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.796440385665!2d-77.00415352519973!3d-12.194249787396094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9c7899fa387%3A0xce1fe9a410a5bd2e!2sCantolao%20Chorrillos!5e0!3m2!1ses-419!2spe!4v1735148864059!5m2!1ses-419!2spe";
 ---
 
 <Container size="xl">
-  <section class="py-8 md:py-12 relative" aria-labelledby="location-title">
+  <section class="py-8 relative" aria-labelledby="location-title">
     <div class="text-center mb-12">
-      <span
-        class="text-accent-dark dark:text-accent-light text-sm font-semibold tracking-wider uppercase mb-2 block transition-colors"
-      >
-        Tu próximo destino
-      </span>
-      <h2
-        id="location-title"
-        class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-accent-dark to-accent-light bg-clip-text"
-      >
-        Nuestra Ubicación
-      </h2>
-      <p
-        class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed"
-      >
-        Nos encontramos en Chorrillos, dentro del Cuartel Tarapacá en donde se
-        encuentran los campos deportivos.
-      </p>
+      <span class="text-accent-dark dark:text-accent-light text-sm font-semibold tracking-wider uppercase mb-2 block transition-colors">Encuéntranos aquí</span>
+      <h2 id="location-title" class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-accent-dark to-accent-light bg-clip-text">Nuestra Ubicación</h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed"> Nos encontramos en Chorrillos, dentro del Cuartel Tarapacá en donde se encuentran nuestras instalaciones.</p>
     </div>
 
-    <div class="grid lg:grid-cols-5 md:grid-cols-2 gap-8 mb-12">
-      <div
-        class="lg:col-span-3 h-[500px] rounded-xl overflow-hidden shadow-lg transition-shadow hover:shadow-xl"
-      >
+    <div class="grid lg:grid-cols-5 md:grid-cols-2 gap-8 mb-12"> 
+      <div class="lg:col-span-3 h-[500px] rounded-xl overflow-hidden shadow-lg transition-shadow hover:shadow-xl">
         <iframe
           src={mapUrl}
           class="w-full h-full border-0"
@@ -44,43 +27,26 @@ const mapUrl =
       </div>
 
       <div class="lg:col-span-2 flex flex-col gap-6">
-        <div
-          class="bg-white dark:bg-black/40 dark:backdrop-blur-md rounded-xl p-6 shadow-lg transition-all duration-300 dark:border dark:border-white/10"
-        >
-          <h3 class="text-xl font-bold mb-4 text-gray-darkest dark:text-white">
-            Dirección Principal
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            {CONTACT.address.street}<br />
+        <div class="bg-white dark:bg-black/40 dark:backdrop-blur-md rounded-xl p-6 shadow-lg transition-all duration-300 dark:border dark:border-white/30">
+          <h3 class="text-xl font-bold mb-4 text-gray-darkest dark:text-white">Dirección Principal</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{CONTACT.address.street}<br />
             {CONTACT.address.district}, {CONTACT.address.city}
             {CONTACT.address.postalCode}
           </p>
           <div class="grid grid-cols-2 gap-4 text-sm">
             <div>
-              <span class="block text-gray-500 dark:text-gray-400"
-                >Distrito</span
-              >
-              <span class="font-medium text-gray-900 dark:text-white"
-                >Chorrillos</span
-              >
+              <span class="block text-gray-500 dark:text-gray-400">Distrito</span>
+              <span class="font-medium text-gray-900 dark:text-white">Chorrillos</span>
             </div>
             <div>
-              <span class="block text-gray-500 dark:text-gray-400"
-                >Referencia</span
-              >
-              <span class="font-medium text-gray-900 dark:text-white"
-                >Cuartel Tarapacá</span
-              >
+              <span class="block text-gray-500 dark:text-gray-400">Referencia</span>
+              <span class="font-medium text-gray-900 dark:text-white">Cuartel Tarapacá</span>
             </div>
           </div>
         </div>
 
-        <div
-          class="bg-white dark:bg-black/40 dark:backdrop-blur-md rounded-xl p-6 shadow-lg transition-all duration-300 dark:border dark:border-white/10"
-        >
-          <h3 class="text-xl font-bold mb-4 text-gray-darkest dark:text-white">
-            Horario de Atención
-          </h3>
+        <div class="bg-white dark:bg-black/40 dark:backdrop-blur-md rounded-xl p-6 shadow-lg transition-all duration-300 dark:border dark:border-white/30">
+          <h3 class="text-xl font-bold mb-4 text-gray-darkest dark:text-white">Horario de Atención</h3>
           <div class="space-y-3">
             {
               CONTACT.schedule.map(({ day, hours }) => (
@@ -97,17 +63,12 @@ const mapUrl =
       </div>
     </div>
 
-    <div
-      class="grid md:grid-cols-2 gap-8 bg-white dark:bg-black/40 dark:backdrop-blur-md rounded-xl shadow-lg p-6 dark:border dark:border-white/10"
-    >
+    <div class="grid md:grid-cols-2 gap-8 bg-white dark:bg-black/40 dark:backdrop-blur-md rounded-xl shadow-lg p-6 dark:border dark:border-white/30">
       <div>
-        <h3
-          class="text-xl font-bold mb-6 flex items-center gap-2 text-gray-darkest dark:text-white"
-        >
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-gray-darkest dark:text-white">
           <svg class="w-5 h-5 stroke-current">
             <use href="/ui.svg#location"></use>
-          </svg>
-          Puntos de Referencia
+          </svg>Puntos de Referencia
         </h3>
         <div class="space-y-4">
           {
@@ -131,13 +92,10 @@ const mapUrl =
       </div>
 
       <div>
-        <h3
-          class="text-xl font-bold mb-6 flex items-center gap-2 text-gray-darkest dark:text-white"
-        >
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-gray-darkest dark:text-white">
           <svg class="w-5 h-5 stroke-current">
             <use href="/ui.svg#map"></use>
-          </svg>
-          Cómo Llegar
+          </svg>Cómo Llegar
         </h3>
         <div class="space-y-6">
           {
@@ -159,17 +117,10 @@ const mapUrl =
       </div>
     </div>
 
-    <div
-      class="bg-gradient-to-r from-accent-dark to-accent-light rounded-xl p-8 mt-12"
-    >
+    <div class="bg-gradient-to-r from-accent-dark to-accent-light rounded-xl p-8 mt-12">
       <div class="max-w-3xl mx-auto text-center">
-        <h3 class="dark:text-white text-2xl md:text-3xl font-bold mb-4">
-          ¿Necesitas indicaciones personalizadas?
-        </h3>
-        <p class="dark:text-white/90 mb-6 text-lg">
-          Nuestro equipo está listo para guiarte paso a paso hasta nuestras
-          instalaciones
-        </p>
+        <h3 class="dark:text-white text-2xl md:text-3xl font-bold mb-4">¿Necesitas indicaciones personalizadas?</h3>
+        <p class="dark:text-white/90 mb-6 text-lg">Nuestro equipo está listo para guiarte paso a paso hasta nuestras instalaciones</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={CONTACT.whatsapp}
@@ -183,9 +134,7 @@ const mapUrl =
             </svg>
             Contactar por WhatsApp
           </a>
-          <div
-            class="inline-flex justify-center items-center px-6 py-3 rounded-lg bg-gray-200 dark:bg-black/40 dark:backdrop-blur-md dark:border dark:border-white/10 border-white dark:text-white font-semibold hover:bg-gray-400 transition-all duration-300 gap-2"
-          >
+          <div class="inline-flex justify-center items-center px-6 py-3 rounded-lg bg-gray-200 dark:bg-black/40 dark:backdrop-blur-md dark:border dark:border-white/30 border-white dark:text-white font-semibold hover:bg-gray-400 transition-all duration-300 gap-2">
             <svg class="w-5 h-5 stroke-current" aria-hidden="true">
               <use href="/ui.svg#phone"></use>
             </svg>
