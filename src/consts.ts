@@ -168,7 +168,7 @@ export const TRANSPORT: Transport = [
   {
     type: 'Auto particular',
     details: 'Estacionamiento Disponible',
-    instructions: 'Ingreso por la entrada del Cuartel Tarapacá, costo de S/5',
+    instructions: 'Ingreso por la entrada del Cuartel Tarapacá, costo de S/3',
   }
 ]
 
@@ -179,19 +179,19 @@ export const LANDMARK: Landmark = [
     description: 'Gasolinera'
   },
   {
+    name: 'Rokys Chorrillos',
+    distance: '1 min',
+    description: 'Pollería'
+  },
+  {
     name: 'Instituto Nacional de Rehabilitación Dra. Adriana Rebaza Flores',
     distance: '2 min',
     description: 'Institución de salud especializada en Medicina Física y de Rehabilitación'
   },
   {
     name: 'La curva',
-    distance: '7 min',
+    distance: '5 min',
     description: 'Ovalo La Curva'
-  },
-  {
-    name: 'Estación Matellini',
-    distance: '9 min',
-    description: 'Estación principal del Metropolitano'
   },
 ]
 
