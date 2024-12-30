@@ -25,10 +25,6 @@ export const LINKS: Links = [
     text: "Ubicación",
     href: "/ubicacion",
   },
-  {
-    text: "Test",
-    href: "/1",
-  },
 ];
 
 // Features
