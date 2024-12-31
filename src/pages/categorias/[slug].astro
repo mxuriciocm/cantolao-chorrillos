@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  const categorias = await getCollection('categorias');
+  return categorias.map(categoria => ({
+    params: { slug: categoria.slug }, props: { categoria },
+  }));
+}
+
+const { categoria } = Astro.props;
+const { Content } = await categoria.render();
+---
+
+<PageLayout>
+  
+</PageLayout>

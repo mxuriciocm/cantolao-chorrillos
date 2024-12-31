@@ -1,8 +1,24 @@
 ---
+import CategoryCard from "@components/CategoryCard.astro";
+import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
-import Categories from "@components/Categories.astro"
+import { getCollection } from "astro:content";
+
+const categorias = await getCollection('categorias');
+const categoriasOrdenadas = categorias.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<PageLayout title="Categorias">
-  <Categories></Categories>
+<PageLayout title="Categorías">
+  <Container size="xl">
+    <div class="text-center py-8">
+      <span class="text-accent-dark dark:text-accent-light text-sm font-semibold tracking-wider uppercase mb-2 block transition-colors">Formación deportiva</span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-accent-dark  ">Nuestras Categorías</h1>
+      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">Te invitamos a conocer las diferentes categorías de nuestra academia deportiva, organizadas para brindar una formación integral y personalizada según el nivel y las metas de cada deportista.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categoriasOrdenadas.map((category: any) => <CategoryCard categoria={category} />)}
+    </div>
+  </Container>
+  
 </PageLayout>
