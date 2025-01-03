@@ -5,7 +5,7 @@ const categoriasCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    image: z.string().url(),
+    image: z.string(),
     order: z.number(),
   }),
 });

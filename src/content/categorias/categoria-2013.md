@@ -1,7 +1,7 @@
 ---
-title: "Desarrollo Web"
-description: "Aprende a crear sitios web modernos con las últimas tecnologías"
-image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+title: "Categoría 2013"
+description: "Competitiva"
+image: "/2013.webp"
 order: 1
 ---
 
