@@ -49,3 +49,11 @@ export type Landmark = {
   distance: string;
   description: string;
 }[];
+
+export type Schedule = {
+  category: string;
+  start: string;
+  end: string;
+  days: string[];
+  color: string;
+}[]

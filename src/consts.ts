@@ -1,4 +1,4 @@
-import type { Site, Links, Socials, Features, Prices, Questions, Transport, Landmark } from "@types";
+import type { Site, Links, Socials, Features, Prices, Questions, Transport, Landmark, Schedule } from "@types";
 
 // Global
 export const SITE: Site = {
@@ -189,6 +189,30 @@ export const LANDMARK: Landmark = [
     distance: '5 min',
     description: 'Ovalo La Curva'
   },
+]
+
+export const SCHEDULE: Schedule = [
+  {
+    category: '2020',
+    start: '3:30',
+    end: "4:30",
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  },
+  {
+    category: '2019/18',
+    start: '4:30',
+    end: '5:30',
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  },
+  {
+    category: '2019/18',
+    start: '4:30',
+    end: '5:30',
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  }
 ]
 
 export const CONTACT = {
