@@ -1,0 +1,52 @@
+---
+import Container from "./Container.astro";
+import { SCHEDULE } from "@consts";
+---
+
+<Container size="xl">
+  <div class="container mx-auto p-4">
+    <h2 class="text-3xl font-bold mb-6 text-primary dark:text-primary-light text-center">Horarios por Categoría</h2>
+    <div class="bg-white dark:bg-black/40 dark:backdrop-blur-md rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-white/30">
+      <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+        <thead class="bg-gray-50 dark:bg-black/40">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Categoría</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Hora de Inicio</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Hora de Fin</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Días</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-black/40 divide-y divide-gray-200 dark:divide-gray-700">
+          {
+            SCHEDULE.map((schedule) => (
+              <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <span
+                    class={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${schedule.color} text-white`}
+                  >
+                    {schedule.category}
+                  </span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                  {schedule.start}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                  {schedule.end}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                  <div class="flex flex-wrap gap-1">
+                    {schedule.days.map((day) => (
+                      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                        {day}
+                      </span>
+                    ))}
+                  </div>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Container>

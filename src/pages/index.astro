@@ -3,6 +3,7 @@ import Faq from "@components/Faq.astro";
 import Features from "@components/Features.astro";
 import Hero from "@components/Hero.astro";
 import Prices from "@components/Prices.astro";
+import Schedule from "@components/Schedule.astro";
 import { SITE } from "@consts";
 import PageLayout from "@layouts/PageLayout.astro";
 ---
@@ -10,6 +11,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 <PageLayout title="Inicio" description={SITE.description}>  
   <Hero />
   <Features />
+  <Schedule />
   <Prices />
   <Faq />
 </PageLayout>
