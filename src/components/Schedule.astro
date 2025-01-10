@@ -13,7 +13,6 @@ import { SCHEDULE } from "@consts";
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Categoría</th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Hora de Inicio</th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Hora de Fin</th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Días</th>
           </tr>
         </thead>
         <tbody class="bg-white dark:bg-black/40 divide-y divide-gray-200 dark:divide-gray-700">
@@ -32,15 +31,6 @@ import { SCHEDULE } from "@consts";
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                   {schedule.end}
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                  <div class="flex flex-wrap gap-1">
-                    {schedule.days.map((day) => (
-                      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                        {day}
-                      </span>
-                    ))}
-                  </div>
                 </td>
               </tr>
             ))

@@ -207,12 +207,47 @@ export const SCHEDULE: Schedule = [
     color: "bg-gray-500"
   },
   {
-    category: '2019/18',
+    category: '2016/17',
     start: '4:30',
-    end: '5:30',
+    end: '6:00',
     days: ["Lunes", "Miercoles", "Viernes"],
     color: "bg-gray-500"
-  }
+  },
+  {
+    category: '2015/14',
+    start: '3:30',
+    end: '4:30',
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  },
+  {
+    category: '2013/12',
+    start: '3:30',
+    end: '4:30',
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  },
+  {
+    category: '2011',
+    start: '6:00',
+    end: '7:30',
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  },
+  {
+    category: '2010',
+    start: '3:30',
+    end: '4:30',
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  },
+  {
+    category: '2009/08',
+    start: '3:30',
+    end: '4:30',
+    days: ["Lunes", "Miercoles", "Viernes"],
+    color: "bg-gray-500"
+  },
 ]
 
 export const CONTACT = {
